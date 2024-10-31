@@ -1,3 +1,5 @@
+[![Tests](https://img.shields.io/badge/tests-${{ job.status == 'success' && 'passing' || 'failing' }}-${{ job.status == 'success' && 'success' || 'critical' }} )](https://github.com/yourusername/dictionary_utils/actions)
+
 # Dictionary Utilities
 
 This project is designed to provide tools for validating the structure and data types of nested dictionaries and merging multiple dictionaries. It consists of two modules: **Dictionary Validation** and **Dictionary Merging**. These utilities are particularly useful when working with JSON data in APIs, ensuring that data conforms to required structures and allowing for efficient aggregation of dictionary data.
