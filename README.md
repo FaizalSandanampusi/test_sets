@@ -1,6 +1,3 @@
-![CI/CD](https://github.com/FaizalSandanampusi/test_sets/workflows/Python%20Tests/badge.svg?label=passingcolor=greentimestamp=1730371659)
-
-![CI/CD](https://github.com/FaizalSandanampusi/Assignment_Test/workflows/Python%20Tests/badge.svg?label=passing&color=green&timestamp=1729536353)
 
 # Dictionary Utilities
 
