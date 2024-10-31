@@ -1,3 +1,5 @@
+![CI/CD](https://github.com/FaizalSandanampusi/test_sets/workflows/Python%20Tests/badge.svg?label=passingcolor=greentimestamp=1730372919)
+
 ![CI/CD](https://github.com/FaizalSandanampusi/test_sets/workflows/Python%20Tests/badge.svg?label=passingcolor=greentimestamp=1730372076)
 
 
