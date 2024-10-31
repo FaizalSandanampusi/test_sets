@@ -25,7 +25,7 @@ jobs:
         
     - name: Run tests with coverage
       run: |
-        python -m pytest tests/ --cov=src/ --cov-report=xml -v --cov-config=.coveragerc
+        pytest --cov --cov-report=xml
         
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
@@ -34,12 +34,18 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}
         fail_ci_if_error: true
         
-    - name: Create status badge
-      uses: schneegans/dynamic-badges-action@v1.6.0
-      with:
-        auth: ${{ secrets.GIST_SECRET }}
-        gistID: ${{ secrets.GIST_ID }}
-        filename: dictionary_validator_status.json
-        label: tests
-        message: ${{ job.status == 'success' && 'passing' || 'failing' }}
-        color: ${{ job.status == 'success' && 'success' || 'critical' }}
+    - name: Update README badge
+      if: success()
+      run: |
+        sed -i '1s#^#![CI/CD](https://github.com/${{ github.repository }}/workflows/Python%20Tests/badge.svg?label=passing&color=green&timestamp='$(date +%s)')\n\n#' README.md
+  
+    - name: Commit and push changes
+      if: success()
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add README.md
+        git commit -m "Update CI/CD badge" || echo "No changes to commit"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

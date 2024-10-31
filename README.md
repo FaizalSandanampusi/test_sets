@@ -1,4 +1,4 @@
-[![tests](https://img.shields.io/badge/tests-${{ job.status == 'success' && 'passing' || 'failing' }}-${{ job.status == 'success' && 'success' || 'critical' }} )](https://github.com/yourusername/dictionary_utils/actions)
+![CI/CD](https://github.com/FaizalSandanampusi/Assignment_Test/workflows/Python%20Tests/badge.svg?label=passing&color=green&timestamp=1729536353)
 
 # Dictionary Utilities
 
